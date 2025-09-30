@@ -1,0 +1,17 @@
+{
+  "name": "boisverco",
+  "version": "1.0.0",
+  "description": "Site web professionnel pour BoisVerco, spécialiste en produits et services du bois",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["bois", "menuiserie", "charpenterie", "ébénisterie", "website"],
+  "author": "BoisVerco",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
