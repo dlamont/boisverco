@@ -1,14 +1,15 @@
 /* Variables CSS pour 2025 */
 :root {
-  /* Couleurs principales - Palette moderne bois */
-  --primary-wood: #8B4513;
-  --primary-wood-light: #A0522D;
-  --primary-wood-dark: #654321;
+  /* Couleurs principales - Palette olive green */
+  --primary-olive: rgb(56, 86, 36);
+  --primary-olive-light: rgb(100, 130, 80);
+  --primary-olive-dark: rgb(30, 60, 20);
   
   --secondary-gold: #D4AF37;
   --secondary-gold-light: #F4D03F;
   --secondary-gold-dark: #B7950B;
   
+  --accent-olive: rgb(56, 86, 36);
   --accent-green: #2E7D32;
   --accent-green-light: #4CAF50;
   
@@ -80,21 +81,69 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--dark-gray);
-  background-color: var(--bg-primary);
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(139, 69, 19, 0.02) 0%, transparent 50%),
-    linear-gradient(90deg, transparent 0%, rgba(139, 69, 19, 0.01) 50%, transparent 100%),
+  background-color: rgba(245, 244, 224, 1); /* lighter olive-tinted beige */
+  background-image:
+    /* Olive green tint layer */
+    linear-gradient(90deg,
+      rgba(56, 86, 36, 0.1) 0%,
+      rgba(56, 86, 36, 0.15) 25%,
+      rgba(56, 86, 36, 0.1) 50%,
+      rgba(56, 86, 36, 0.2) 75%,
+      rgba(56, 86, 36, 0.1) 100%
+    ),
+    /* Planches de bois individuelles */
+    linear-gradient(90deg,
+      #D2B48C 0%, #DEB887 15%, #D2B48C 30%, #C19A6B 45%, #D2B48C 60%, #DEB887 75%, #D2B48C 90%, #C19A6B 100%
+    ),
+    /* Joints entre les planches */
     repeating-linear-gradient(
       0deg,
-      transparent,
+      transparent 0px,
+      transparent 148px,
+      rgba(56, 86, 36, 0.3) 148px,
+      rgba(56, 86, 36, 0.3) 152px
+    ),
+    /* Veines du bois horizontales */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
       transparent 2px,
-      rgba(139, 69, 19, 0.008) 2px,
-      rgba(139, 69, 19, 0.008) 4px
+      rgba(56, 86, 36, 0.1) 2px,
+      rgba(56, 86, 36, 0.1) 3px,
+      transparent 3px,
+      transparent 8px,
+      rgba(56, 86, 36, 0.08) 8px,
+      rgba(56, 86, 36, 0.08) 9px
+    ),
+    /* Nœuds et imperfections du bois */
+    radial-gradient(ellipse 40px 8px at 25% 30%, rgba(56, 86, 36, 0.2) 0%, transparent 70%),
+    radial-gradient(ellipse 30px 6px at 75% 60%, rgba(56, 86, 36, 0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 35px 7px at 45% 80%, rgba(56, 86, 36, 0.12) 0%, transparent 70%),
+    /* Texture générale du bois avec tic olive */
+    linear-gradient(90deg,
+      rgba(210, 180, 140, 0.2) 0%,
+      rgba(22, 66, 26, 0.1) 25%,
+      rgba(193, 154, 107, 0.15) 50%,
+      rgba(21, 66, 26, 0.1) 75%,
+      rgba(222, 184, 135, 0.2) 100%
     );
-  background-size: 800px 600px, 600px 800px, 400px 400px, 100% 100%, 100% 8px;
-  background-position: 0 0, 100% 0, 50% 100%, 0 0, 0 0;
+  background-size: 
+    100% 150px,
+    100% 150px,
+    100% 20px,
+    300px 150px,
+    400px 150px,
+    350px 150px,
+    100% 150px;
+  background-position: 
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    100px 0,
+    200px 0,
+    0 0;
+  background-repeat: repeat-y, repeat-y, repeat, repeat-y, repeat-y, repeat-y, repeat-y;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -134,12 +183,12 @@ p {
 .lead {
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--primary-wood);
+  color: var(--primary-olive);
 }
 
 /* Barre supérieure */
 .top-bar {
-  background: linear-gradient(135deg, var(--primary-wood) 0%, var(--primary-wood-dark) 100%);
+  background: linear-gradient(135deg, var(--primary-olive) 0%, var(--primary-olive-dark) 100%);
   color: var(--white);
   padding: var(--spacing-xs) 0;
   font-size: 0.875rem;
@@ -202,9 +251,9 @@ p {
 }
 
 .logo-icon {
-  width: 80px;
+  width: 200px;
   height: 80px;
-  color: var(--primary-wood);
+  color: var(--primary-olive);
   transition: transform var(--transition-normal);
 }
 
@@ -221,7 +270,7 @@ p {
 
 .logo-text h1 {
   font-size: 1.75rem;
-  color: var(--primary-wood);
+  color: var(--primary-olive);
   margin: 0;
   font-weight: 700;
 }
@@ -252,7 +301,7 @@ p {
 }
 
 .nav-link:hover {
-  color: var(--primary-wood);
+  color: var(--primary-olive);
   background-color: var(--bg-accent);
 }
 
@@ -281,7 +330,7 @@ p {
 }
 
 .quote-btn {
-  background: linear-gradient(135deg, var(--secondary-gold) 0%, var(--secondary-gold-dark) 100%);
+  background: linear-gradient(135deg, var(--accent-olive) 0%, rgb(30, 50, 20) 100%);
   color: var(--white);
   border: none;
   padding: var(--spacing-sm) var(--spacing-md);
@@ -379,7 +428,7 @@ p {
 
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  color: var(--primary-wood);
+  color: var(--primary-olive);
   margin-bottom: var(--spacing-md);
   font-weight: 700;
 }
@@ -412,7 +461,7 @@ p {
 }
 
 .cta-primary {
-  background: linear-gradient(135deg, var(--primary-wood) 0%, var(--primary-wood-dark) 100%);
+  background: linear-gradient(135deg, var(--primary-olive) 0%, var(--primary-olive-dark) 100%);
   color: var(--white);
   box-shadow: var(--shadow-md);
 }
@@ -424,12 +473,12 @@ p {
 
 .cta-secondary {
   background: transparent;
-  color: var(--primary-wood);
-  border-color: var(--primary-wood);
+  color: var(--primary-olive);
+  border-color: var(--primary-olive);
 }
 
 .cta-secondary:hover {
-  background: var(--primary-wood);
+  background: var(--primary-olive);
   color: var(--white);
 }
 
